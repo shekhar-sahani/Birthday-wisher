@@ -1,81 +1,67 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200&display=swap");
-
-/* VARIABLES */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  transition: all 0.2s ease-in-out;
 }
+
 body {
-  font-family: "Montserrat", sans-serif;
-  background-color: var(--main-bg-color-dark);
-  color: var(--main-text-color-dark);
-  background-color: #1d1d1d;
+  background: #008888;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
 }
-.page {
-  width: 100%;
+
+.card {
+  border-radius: 4px;
+  height: 85vh;
+  width: 80vw;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  padding: 1em;
+  overflow: hidden;
 }
-.heading {
-  font-size: 45px;
-  opacity: 0.7;
+
+@media only screen and (min-width: 1000px) {
+  .card {
+    flex-direction: row-reverse;
+  }
+  .card img.birthday {
+    width: 100%;
+    max-width: 50vw;
+    max-height: unset;
+  }
 }
-.highlight {
-  color: whitesmoke;
-  opacity: 1 !important;
+
+@media (max-height: 800px) {
+  .card img.birthday {
+    width: 100%;
+    max-width: auto;
+    max-height: unset;
+  }
 }
-.countdown-wrapper {
-  max-width: 800px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 40px 0;
+
+img.birthday {
+  max-height: 40vh;
 }
-.countdown-box {
-  background-color: #0c0733;
-  font-size: 50px;
-  font-weight: 700;
-  color: #dcd6f7;
-  border-radius: 15px;
-  width: 160px;
-  height: 160px;
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+
+.text {
+  padding: 1em;
 }
-.legend {
-  font-size: 30px;
-  color: #a6b1e1;
-}
-.wish-message {
-  font-size: 45px;
-  font-weight: 700;
-}
-.birthdate {
-  font-size: 25px;
-  font-weight: 600;
-  color: white;
+
+.muted {
   opacity: 0.8;
 }
-.credits {
-  margin-top: 15px;
+
+.space {
+  height: 100px;
 }
-.github-logo {
-  opacity: 0.5;
-  width: 50px;
-}
-.github-logo:hover {
-  opacity: 1;
-}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -86,6 +72,9 @@ body {
 }
 .form input {
   margin: 10px;
+}
+::placeholder {
+  color: rgba(255, 255, 255, 0.527);
 }
 input {
   color: rgba(255, 255, 255, 0.527);
@@ -99,11 +88,19 @@ input {
   padding-right: 10px;
   font-size: 18px;
 }
+@media (max-width: 800px) {
+  input {
+    width: 250px !important;
+  }
+}
+.place {
+  color: rgba(255, 255, 255, 0.527);
+}
+
 select {
   width: 300px;
   height: 40px;
   background-color: transparent;
-  color: rgba(255, 255, 255, 0.527);
   font-family: Montserrat, sans-serif;
   border: 1px rgba(255, 255, 255, 0.164) solid;
   padding-left: 20px;
@@ -113,6 +110,11 @@ select {
   font-size: 18px;
   margin-top: 10px;
   outline: none;
+}
+@media (max-width: 800px) {
+  select {
+    width: 250px;
+  }
 }
 input:focus,
 select:focus,
@@ -135,11 +137,15 @@ select:focus,
 .btn:hover {
   color: white;
 }
+@media (max-width: 800px) {
+  .btn {
+    width: 250px;
+  }
+}
 a {
-  color: white !important;
+  color: #7f78d2;
   font-weight: bold;
   margin-top: 20px;
-  margin-bottom: 40px;
 }
 .gen-link {
   margin-top: 20px;
